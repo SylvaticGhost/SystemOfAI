@@ -26,4 +26,5 @@ outlier_count = outliers.size
 print(f'Min: {min_val}, Max: {max_val}')
 print(f'Mean: {mean_val}, Std: {std_val}')
 print(f'Median: {median_val}, Q1: {q1_val}, Q3: {q3_val}, IQR: {iqr_val}')
+print(f'Lower normal bound: {lower_normal_bound}, Upper normal bound: {upper_normal_bound}')
 print(f'Outlier count: {outlier_count}, Outlier percentage: {outlier_count / w.size * 100:.2f}%')
