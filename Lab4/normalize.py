@@ -1,6 +1,6 @@
 ﻿import numpy as np
 
-data = np.load('sarsa-weights-berzerk-20k.npz')
+data = np.load('sarsa-weights-berzerk.npz')
 w = data['w']
 print(f'Weights shape: {w.shape}')
 print(w)
