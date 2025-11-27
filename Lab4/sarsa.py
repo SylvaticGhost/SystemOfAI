@@ -57,6 +57,14 @@ class Sarsa:
         data = np.load(file_name)
         n_actions = int(data['n_actions'])
         state_dim = int(data['state_dim'])
+
+        if state_dim != VECTOR_STATE_SIZE:
+            raise ValueError(
+                f"Loaded weights have state_dim={state_dim}, "
+                f"but current VECTOR_STATE_SIZE={VECTOR_STATE_SIZE}. "
+                f"Delete `{file_name}` and retrain."
+            )
+
         agent = Sarsa(n_actions)
         agent.state_dim = state_dim
         agent.w = data['w'].reshape((n_actions, state_dim)).astype(np.float32)

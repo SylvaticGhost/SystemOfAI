@@ -7,10 +7,7 @@ from sarsa import Sarsa
 
 agent = Sarsa.load("sarsa-weights-berzerk.npz")
 
-ale = ALEInterface()
-gym.register_envs(ale)
-
-test_env = gym.make("ALE/Berzerk-v5", render_mode="human", frameskip=4)
+test_env = gym.make("ALE/Berzerk-v5", render_mode="human")
 agent.restrict_exploration()
 
 n_episodes = 5
@@ -35,7 +32,7 @@ for ep in range(n_episodes):
         state = next_state
         ep_reward += reward
 
-    test_env.render()
+    # test_env.render()
     print(f"Episode {ep + 1}: Total Reward = {ep_reward}")
     print(f'Action count during round: {actions_count}')
     print('---------------------------')
